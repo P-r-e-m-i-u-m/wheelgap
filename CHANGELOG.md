@@ -3,6 +3,7 @@
 ## Unreleased
 
 - MCP tools keep their `notes` when `FORCE_COLOR` is set: the CLI now always runs with `--color=never`, so a dimmed note's ANSI prefix no longer hides the `wheelgap: note:` marker and gets the note dropped. (#456, thanks [@P-r-e-m-i-u-m](https://github.com/P-r-e-m-i-u-m))
+- `--dist` with `offline = true` in `[tool.wheelgap]` now names the real way out — set `offline = false` in `[tool.wheelgap]` (or drop the key) — instead of telling you to pass `--online`, which `--dist` refuses. (#452, thanks [@Seyamalam](https://github.com/Seyamalam))
 
 ## 0.13.0 (2026-11-16)
 
