@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- MCP tools keep their `notes` when `FORCE_COLOR` is set: the CLI now always runs with `--color=never`, so a dimmed note's ANSI prefix no longer hides the `wheelgap: note:` marker and gets the note dropped. (#456, thanks [@P-r-e-m-i-u-m](https://github.com/P-r-e-m-i-u-m))
+
 ## 0.13.0 (2026-11-16)
 
 New: **`--from-log FILE`** turns a failed `pip install` or uv install log into the answer: the packages that failed to build, why no wheel fits the Python and platform you name, and the release that has one. wheelgap also reads a **pip installation report** (`pip install --dry-run --report`), so it checks exactly what pip resolved on a machine without installing anything, and **`--sarif PATH`** puts each gap in GitHub code scanning at its lockfile line. For agents and scripts, the MCP server gains **`check_dist`** (the `--dist` release gate as a tool), `check_package` gives the whole way out for a pinned version and every package in its tree, `check_lockfile` takes `dependencies: true` for a requirements file or `pyproject.toml`, and the Python API's `check_lockfile(..., deps=True)` does the same. The direct dependency behind a transitive gap is now in `--json --explain` and the API (`direct`), in `--junit` messages, and on the right requirement line with `--deps --github-annotations`. 14 of the 15 changes came from 6 outside contributors.
