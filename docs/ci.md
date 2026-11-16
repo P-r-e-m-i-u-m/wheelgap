@@ -129,6 +129,12 @@ directory outside Actions). The line is found in `uv.lock`, `poetry.lock`, `pdm.
 package is on (a name and version written twice, or a `pyproject.toml` input), the annotation names the file without
 a line.
 
+**After 0.12.0** (released in 0.13.0): `--deps` also puts annotations on requirement lines. A direct requirement's gap
+is on its own line. A transitive gap is on the line of the requirement that pulls it in when exactly one does on every
+target where it has a gap, with `(via …)` in the message naming that requirement — for example
+`source (via mcp)`. When more than one requirement pulls it in, or a line isn't certain, the annotation names the file
+without a line and the message names them all. See [GitHub annotations](cli.md#github-annotations) for the full rules.
+
 ### Watching a platform
 
 To watch a platform before you support it, put `--advisory` in `args`:
